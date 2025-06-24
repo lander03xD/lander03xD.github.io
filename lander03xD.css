@@ -4,5 +4,8 @@ body {
 }
 
 #page-header {
-	color:SlateBlue;
+	min-height:20%;
+	max-height:30%;
+	background-color:SlateBlue;
+	color: LightGray;
 }
