@@ -10,7 +10,7 @@ html {
 
 body {
 	min-height: 100vh;
-	background-color: LightGray;
+	background-color: b7a4ed;
 	margin:0%;
 }
 
@@ -21,6 +21,13 @@ body {
 	display:flex;
 	justify-content: center;
 	align-items:center;
+}
+
+.inline-icon {
+  width: 2em;      /* Matches the font size */
+  height: 2em;     /* Keeps it square */
+  vertical-align: middle; /* Aligns nicely with the text */
+  margin-right: 0.3em;    /* Space between icon and text */
 }
 
 .redirect-item {
@@ -39,7 +46,7 @@ body {
 }
 
 .redirect-item:hover {
-  background-color: #0069d9; /* Slightly darker blue on hover */
+  background-color: #5b4cb2; /* Slightly darker blue on hover */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -47,4 +54,20 @@ body {
   .redirect-item {
     width: 90vw;
   }
+}
+
+.fixed-hover-image {
+  position: fixed;
+  bottom: 0px;       /* distance from bottom */
+  right: 0px;        /* distance from right */
+  width: 20vw;        /* set your preferred size */
+  height: auto;
+  cursor: pointer;
+  z-index: 1000;      /* make sure it’s above other elements */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.fixed-hover-image:hover {
+  transform: scale(1.1);
+  filter: brightness(0.85);
 }
