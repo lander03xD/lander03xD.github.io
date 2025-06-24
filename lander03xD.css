@@ -1,3 +1,9 @@
+:root {
+  --dark-gray: #1E1E2F;
+  --slate-blue: #6A5ACD;
+  --light-text: #E0E0F8;
+}
+
 html {
   font-family: sans-serif;
 }
@@ -17,8 +23,28 @@ body {
 	align-items:center;
 }
 
-#page-body {
-	/*display:flex;*/
-	justicy-content:center;
-	align-items:center;
+.redirect-item {
+	padding:1em;
+  width: 50vw; /* 1/2 of the viewport width */
+  margin: 10px auto;
+  text-align: center;
+  background-color: SlateBlue;     /* Button blue */
+  color: LightGray;                  /* Text color */
+  border: none;
+  border-radius: 6px;            /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.redirect-item:hover {
+  background-color: #0069d9; /* Slightly darker blue on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1000px) {
+  .redirect-item {
+    width: 90vw;
+  }
 }
