@@ -28,6 +28,10 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+} 
+
+#page-header h1 {
+  font-size: 5vh;
 }
 
 .inline-icon {  
