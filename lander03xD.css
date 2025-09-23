@@ -1,9 +1,10 @@
 :root {
-  --primary-blue: #3A4DA3; /* Darkened version of the favicon blue for dark mode */
+  --primary-blue: #32439b; /* Darkened version of the favicon blue for dark mode */
+  --dark-blue: #32439b;
   --text-light: #FFFFFF; /* Pure white for better contrast on dark backgrounds */
-  --body-background: #6A76C4; /* Deep slate background for dark mode */
+  --body-background: #d9def9; /* Deep slate background for dark mode */
   --dark-text: #E0E0F0; /* Light gray for readable text on dark background */
-  --redirect-item-hover: #2F418B; /* Slightly darker shade of the updated primary blue */
+  --redirect-item-hover: #4861e1; /* Slightly darker shade of the updated primary blue */
 }
 
 
@@ -22,7 +23,7 @@ body {
 
 #page-header {
   height: 15vh;
-  background-color: var(--primary-blue); /* Use the new primary blue */
+  background-color: var(--dark-blue); /* Use the new primary blue */
   color: var(--text-light); /* Use pure white for header text for better contrast */
   display: flex;
   justify-content: center;
@@ -40,28 +41,7 @@ body {
   margin-right: 0.3em;
 }
 
-.redirects {
-    padding: 20px 0; /* Adds some vertical space above and below the redirect items */
-}
 
-.redirect-item {
-  padding: 1em;
-  width: 50vw;
-  max-width: 600px; /* Limits the width on very large screens for better readability (long lines are harder to read) */
-  margin: 10px auto;
-  text-align: center;
-  background-color: var(--primary-blue); /* Use the new primary blue */
-  color: var(--text-light); /* Use pure white for button text for better contrast */
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  box-sizing: border-box;
-  font-size: 1.2em; /* Slightly larger font size for better readability on buttons */
-  text-decoration: none; /* Removes the default underline from links */
-  display: block; /* Makes the entire div clickable through the anchor */
-}
 
 .gallery {
   display: grid;
@@ -76,38 +56,21 @@ body {
   padding-top: 100%; /* Makes it square */
   overflow: hidden;  
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 12%; /* Rounded corners */
+  /*background-color: var(--dark-blue);*/
 }
 
 .gallery-image img {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0%;
+  left: 0%;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12%; /* Rounded corners */
 }
 .gallery-image img:hover { /* todo hover stuff*/
-  transform: scale(1.05);
-}
-
-.redirect-item:hover {
-  transform: scale(1.05);
-  filter: brightness(0.85);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.redirects a {
-    text-decoration: none; /* Ensures no default underline for the anchor tags surrounding redirect-item */
-    color: inherit; /* Ensures the text color is inherited from .redirect-item */
-}
-
-.projects { /* Corrected typo from 'projcets' to 'projects' */
-    padding: 20px; /* Add padding around the projects section */
-    text-align: center; /* Centers the "Projects" heading */
-}
-
-.projects h2 {
-    color: var(--dark-text); /* Ensures heading color is dark for readability on light background */
+  transform: scale(1.10);
 }
 
 .fixed-hover-image {
@@ -124,6 +87,41 @@ body {
 .fixed-hover-image:hover {
   transform: scale(1.05);
 }
+
+.redirects {
+  margin: 25px 12vw; /* Adds some vertical space above and below the redirect items */
+    display: grid;
+    gap: 20px;
+    justify-items: center; /* Center items in grid cells */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.redirects a {
+    text-decoration: none;
+}
+
+.redirect-item {
+  padding: 1em;
+  width: 100%;
+  max-width: 300px; /* Only if you want a hard max width */
+  text-align: center;
+  background-color: var(--primary-blue); /* Use the new primary blue */
+  color: var(--text-light); /* Use pure white for button text for better contrast */
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  font-size: 1.2em; /* Slightly larger font size for better readability on buttons */
+  display: block; /* Makes the entire div clickable through the anchor */
+}
+.redirect-item:hover {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
 
 @media (max-width: 1000px) {
   .redirect-item {
