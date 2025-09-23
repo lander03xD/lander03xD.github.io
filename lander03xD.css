@@ -7,11 +7,11 @@
   --redirect-item-hover: #4861e1; /* Slightly darker shade of the updated primary blue */
 }
 
-
 html {
   /* Improved font stack for better cross-browser consistency and readability */
-  font-family: Calibri, Verdana, sans-serif;
+  font-family: 'Varela Round', Calibri, Verdana, sans-serif;
   font-size: 16px; /* Sets a clear base font size for better scaling */
+  
 }
 
 body {
@@ -23,13 +23,32 @@ body {
 
 #page-header {
   height: 15vh;
-  background-color: var(--dark-blue); /* Use the new primary blue */
-  color: var(--text-light); /* Use pure white for header text for better contrast */
+  background-color: var(--dark-blue);
+  color: var(--text-light);
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
 } 
+
+#page-footer {
+  height: 8vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10vw 0 0 0; 
+  position: relative;
+  z-index: 1001;
+  font-size: 8px;
+  text-decoration: none;
+  padding: 0 10vw;
+}
+
+#page-footer a {
+ text-decoration: none;
+ color: var(--text-light);
+}
 
 #page-header h1 {
   font-size: 5vh;
@@ -57,7 +76,6 @@ body {
   overflow: hidden;  
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
   border-radius: 12%; /* Rounded corners */
-  /*background-color: var(--dark-blue);*/
 }
 
 .gallery-image img {
@@ -76,9 +94,9 @@ body {
 .fixed-hover-image {
   position: fixed;
   bottom: 0vh;
-  right: 5vw;
-  width: 20vw;
-  height: auto;
+  right: 2vw;
+  width: auto;
+  height: 25vh;
   cursor: pointer;
   z-index: 1000;
   transition: transform 0.3s ease, filter 0.3s ease;
