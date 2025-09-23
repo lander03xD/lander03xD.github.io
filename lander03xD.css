@@ -103,7 +103,7 @@ body {
 .redirect-item {
   padding: 1em;
   width: 100%;
-  max-width: 300px; /* Only if you want a hard max width */
+  max-width: 100%; /* Only if you want a hard max width */
   text-align: center;
   background-color: var(--primary-blue); /* Use the new primary blue */
   color: var(--text-light); /* Use pure white for button text for better contrast */
