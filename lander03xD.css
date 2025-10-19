@@ -140,6 +140,12 @@ body {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Dark Mode via system preference */
+@media (prefers-color-scheme: dark) {
+  body {
+    --body-background: #2d3347;
+  }
+}
 
 @media (max-width: 1000px) {
   .redirect-item {
