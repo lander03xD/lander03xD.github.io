@@ -32,7 +32,7 @@ body {
 } 
 
 #page-footer {
-  height: 8vh;
+  height: 6vh;
   background-color: var(--dark-blue);
   display: flex;
   justify-content: center;
@@ -40,7 +40,7 @@ body {
   margin: 10vw 0 0 0; 
   position: relative;
   z-index: 1001;
-  font-size: 8px;
+  font-size: 12px;
   text-decoration: none;
   padding: 0 10vw;
 }
@@ -78,6 +78,25 @@ body {
   border-radius: 12%; /* Rounded corners */
 }
 
+.gallery-separator {
+  grid-column: 1 / -1; /* span all 3 columns */
+  padding: 1em;
+  text-align: center;
+
+  background-color: var(--primary-blue);
+  color: var(--text-light);
+
+  border-radius: 6px;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+
+  box-sizing: border-box;
+  margin-top: 2em;
+}
+
 .gallery-image img {
   position: absolute;
   top: 0%;
@@ -102,8 +121,8 @@ body {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.fixed-hover-image:hover {
-  transform: scale(1.05);
+.fixed-hover-image:active {
+  transform: scale(1.1);
 }
 
 .redirects {
