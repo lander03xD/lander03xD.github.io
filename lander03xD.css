@@ -114,8 +114,8 @@ body {
   position: fixed;
   bottom: 0vh;
   right: 2vw;
-  width: auto;
-  height: 25vh;
+  width: min(25vh,25vw);
+  height: min(25vh,25vw);
   cursor: pointer;
   z-index: 1000;
   transition: transform 0.3s ease, filter 0.3s ease;
