@@ -1,57 +1,63 @@
+/* ====================
+   VARIABLES
+==================== */
+
 :root {
-  --primary-blue: #32439b; /* Darkened version of the favicon blue for dark mode */
   --dark-blue: #32439b;
-  --text-light: #FFFFFF; /* Pure white for better contrast on dark backgrounds */
-  --body-background: #d9def9; /* Deep slate background for dark mode */
-  --dark-text: #E0E0F0; /* Light gray for readable text on dark background */
-  --redirect-item-hover: #4861e1; /* Slightly darker shade of the updated primary blue */
+  --text-light: #FFFFFF;
+  --body-background: #d9def9;
 }
 
+/* ====================
+   GLOBAL STYLES
+==================== */
 html {
-  /* Improved font stack for better cross-browser consistency and readability */
   font-family: 'Varela Round', Calibri, Verdana, sans-serif;
-  font-size: 16px; /* Sets a clear base font size for better scaling */
-  
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   min-height: 100vh;
-  background-color: var(--body-background); /* Use the new light blue background */
-  margin: 0%;
-  color: var(--dark-text); /* Default text color for any content directly in the body */
+  background-color: var(--body-background);
+  color: var(--text-light);
 }
 
-#page-header {
-  height: 15vh;
+/* ====================
+   HEADER & FOOTER
+==================== */
+header, footer{
   background-color: var(--dark-blue);
-  color: var(--text-light);
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+}
+
+header a, footer a {
+    text-decoration: none;
+    color: var(--text-light); 
+}
+
+header {
+  min-height: 15vh;
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
 } 
 
-#page-footer {
-  height: 6vh;
-  background-color: var(--dark-blue);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10vw 0 0 0; 
-  position: relative;
-  z-index: 1001;
-  font-size: 12px;
-  text-decoration: none;
-  padding: 0 10vw;
-}
-
-#page-footer a {
- text-decoration: none;
- color: var(--text-light);
-}
-
-#page-header h1 {
+header h1 {
   font-size: 5vh;
+}
+
+footer {
+  min-height: 8vh;
+  margin: 8vh 10vw 0 10vw;
+  border-radius: 2vh 2vh 0 0 ; 
+  position: relative;
+  font-size: 10px;
+  padding: 0 5vw;
+  z-index: 1001;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
 }
 
 .inline-icon {  
@@ -60,11 +66,51 @@ body {
   margin-right: 0.3em;
 }
 
+/* ====================
+   REDIRECTS
+==================== */
+.redirects {
+  margin: 25px 10vw;
+    display: grid;
+    gap: 25px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 
+.redirects a {
+    text-decoration: none;
+    color: var(--text-light); 
+}
+
+.redirect-item {
+  padding: 1em;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  background-color: var(--dark-blue);
+  border: none;
+  border-radius: 0.5em;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  display: block;
+}
+
+.redirect-item:hover {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+/* ====================
+   GALLERY
+==================== */
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /*grid-template-columns: repeat(3, 1fr);*/
+  grid-template-columns: repeat(auto-fit, minmax(min(30vh, 30vw), 1fr));
   gap: 1vw;
   padding: 0 15vw;
 }
@@ -72,27 +118,21 @@ body {
 .gallery-image {
   position: relative;
   width: 100%;
-  padding-top: 100%; /* Makes it square */
+  padding-top: 100%;
   overflow: hidden;  
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
-  border-radius: 12%; /* Rounded corners */
+  border-radius: 12%;
 }
 
 .gallery-separator {
-  grid-column: 1 / -1; /* span all 3 columns */
+  grid-column: 1 / -1;
   padding: 1em;
   text-align: center;
 
-  background-color: var(--primary-blue);
-  color: var(--text-light);
-
+  background-color: var(--dark-blue);
   border-radius: 6px;
   box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
-
   font-size: 1em;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-
   box-sizing: border-box;
   margin-top: 2em;
 }
@@ -104,11 +144,15 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12%; /* Rounded corners */
+  border-radius: 12%;
 }
-.gallery-image img:hover { /* todo hover stuff*/
+.gallery-image img:hover {
   transform: scale(1.10);
 }
+
+/* ====================
+   HOVER IMAGE
+==================== */
 
 .fixed-hover-image {
   position: fixed;
@@ -125,44 +169,11 @@ body {
   transform: scale(1.1);
 }
 
-.redirects {
-  margin: 25px 12vw; /* Adds some vertical space above and below the redirect items */
-    display: grid;
-    gap: 20px;
-    justify-items: center; /* Center items in grid cells */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.redirects a {
-    text-decoration: none;
-}
-
-.redirect-item {
-  padding: 1em;
-  width: 100%;
-  max-width: 100%; /* Only if you want a hard max width */
-  text-align: center;
-  background-color: var(--primary-blue); /* Use the new primary blue */
-  color: var(--text-light); /* Use pure white for button text for better contrast */
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  box-sizing: border-box;
-  font-size: 1.2em; /* Slightly larger font size for better readability on buttons */
-  display: block; /* Makes the entire div clickable through the anchor */
-}
-.redirect-item:hover {
-  transform: scale(1.05);
-  filter: brightness(0.85);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
 /* Dark Mode via system preference */
 @media (prefers-color-scheme: dark) {
   body {
     --body-background: #2d3347;
+    color: #e0e0f0;
   }
 }
 
