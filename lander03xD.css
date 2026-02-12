@@ -177,8 +177,8 @@ footer {
   }
 }
 
-@media (max-width: 1000px) {
+@media (width < 799px) {
   .redirect-item {
-    width: 90vw;
+    padding: 0.5em;
   }
 }
