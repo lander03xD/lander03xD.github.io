@@ -177,6 +177,10 @@ footer {
 }
 
 @media (width < 799px) {
+  .redirects {
+    gap: 1em 25px;
+  }
+
   .redirect-item {
     padding: 0.5em;
     font-size: 1em
