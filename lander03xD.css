@@ -109,7 +109,6 @@ footer {
 
 .gallery {
   display: grid;
-  /*grid-template-columns: repeat(3, 1fr);*/
   grid-template-columns: repeat(auto-fit, minmax(min(30vh, 30vw), 1fr));
   gap: 1vw;
   padding: 0 15vw;
@@ -180,5 +179,6 @@ footer {
 @media (width < 799px) {
   .redirect-item {
     padding: 0.5em;
+    font-size: 1em
   }
 }
